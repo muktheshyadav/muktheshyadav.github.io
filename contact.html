@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MH Creatives | Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-black text-white flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-6 py-4 border-b border-gray-800">
+    <img src="images/MH LOGO.png" alt="MH Creatives Logo" class="h-12">
+    <nav class="space-x-6">
+      <a href="index.html" class="hover:text-yellow-400">Home</a>
+      <a href="work.html" class="hover:text-yellow-400">Work</a>
+      <a href="about.html" class="hover:text-yellow-400">About</a>
+      <a href="contact.html" class="text-yellow-400">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <main class="flex-grow relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+    <!-- Graphic Background -->
+    <div class="absolute inset-0 bg-[url('images/bg-texture.png')] opacity-10 bg-cover bg-center z-0"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 py-20">
+      <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 text-center mb-6">Get in Touch</h2>
+      <p class="text-center text-gray-300 text-lg mb-12">"Raw to remarkable — your next edit starts here"</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Contact Info -->
+<div class="space-y-6 text-left">
+  <div class="flex items-center gap-4">
+    <i class="fas fa-envelope text-yellow-400 text-2xl"></i>
+    <a href="mailto:mhcreatives765@gmail.com" class="hover:underline">mhcreatives765@gmail.com</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <i class="fab fa-whatsapp text-green-400 text-2xl"></i>
+    <a href="https://wa.me/919603223765" target="_blank" class="hover:underline">+91 9603223765</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <i class="fab fa-instagram text-pink-400 text-2xl"></i>
+    <a href="https://www.instagram.com/mh__creatives" target="_blank" class="hover:underline">@mh__creatives</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <i class="fab fa-youtube text-red-500 text-2xl"></i>
+    <a href="https://www.youtube.com/@mhcreatives1108" target="_blank" class="hover:underline">@mhcreatives1108</a>
+  </div>
+</div>
+
+
+        <!-- Contact Form -->
+        <form id="contact-form" action="https://formspree.io/f/movwzebz" method="POST" class="bg-gray-900 bg-opacity-50 p-8 rounded-xl shadow-lg space-y-4 text-left">
+          <input type="text" name="name" id="name" placeholder="Your Name" class="w-full p-3 bg-black text-white border border-gray-700 rounded focus:outline-none focus:border-yellow-400" required>
+          <input type="email" name="email" id="email" placeholder="Your Email" class="w-full p-3 bg-black text-white border border-gray-700 rounded focus:outline-none focus:border-yellow-400" required>
+          <textarea name="message" id="message" rows="5" placeholder="Your Message" class="w-full p-3 bg-black text-white border border-gray-700 rounded focus:outline-none focus:border-yellow-400" required></textarea>
+          <button type="submit" class="w-full bg-yellow-400 text-black font-semibold py-2 rounded hover:bg-yellow-500 transition">Send Message</button>
+
+          <!-- Success Message -->
+          <div id="success-message" class="hidden animate-bounce mt-4 text-green-400 text-center font-semibold transition-all">
+            ✅ Your message has been sent!
+          </div>
+
+          <!-- Error Message -->
+          <div id="error-message" class="hidden mt-2 text-red-400 text-center font-semibold">
+            ⚠️ Please fill in all fields correctly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-gray-800 py-10 px-4">
+    <div class="flex flex-col items-center justify-center space-y-4">
+      <!-- Social Media Icons -->
+      <div class="flex gap-10">
+        <a href="https://www.instagram.com/mh__creatives" target="_blank" class="hover:text-pink-400">
+          <i class="fab fa-instagram fa-2xl"></i>
+        </a>
+        <a href="https://wa.me/919603223765" target="_blank" class="hover:text-green-400">
+          <i class="fab fa-whatsapp fa-2xl"></i>
+        </a>
+        <a href="https://www.youtube.com/@mhcreatives1108" target="_blank" class="hover:text-red-500">
+          <i class="fab fa-youtube fa-2xl"></i>
+        </a>
+      </div>
+      <!-- Copyright -->
+      <p class="text-base text-gray-500">© 2025 MH Creatives. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Contact Form Script -->
+  <script>
+    const form = document.getElementById("contact-form");
+    const successMessage = document.getElementById("success-message");
+    const errorMessage = document.getElementById("error-message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email.includes("@") || !message) {
+        errorMessage.classList.remove("hidden");
+        successMessage.classList.add("hidden");
+        return;
+      } else {
+        errorMessage.classList.add("hidden");
+      }
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" }
+      })
+      .then(() => {
+        successMessage.classList.remove("hidden");
+        form.reset();
+
+        setTimeout(() => {
+          window.location.href = "thankyou.html"; // Redirect to thank you page
+        }, 3000);
+      })
+      .catch(() => {
+        successMessage.innerText = "❌ Something went wrong. Please try again.";
+        successMessage.classList.remove("text-green-400");
+        successMessage.classList.add("text-red-400");
+        successMessage.classList.remove("hidden");
+      });
+    });
+  </script>
+</body>
+</html>
