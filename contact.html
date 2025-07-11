@@ -11,13 +11,15 @@
 <body class="bg-black text-white flex flex-col min-h-screen overflow-x-hidden">
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-gray-800">
-    <img src="images/MH LOGO.png" alt="MH Creatives Logo" class="h-12 object-contain">
-    <nav class="space-x-4 sm:space-x-6 text-sm sm:text-base">
-      <a href="index.html" class="hover:text-yellow-400">Home</a>
-      <a href="work.html" class="hover:text-yellow-400">Work</a>
-      <a href="about.html" class="hover:text-yellow-400">About</a>
-      <a href="contact.html" class="text-yellow-400">Contact</a>
+  <header class="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-gray-800 w-full">
+    <div class="flex-shrink-0">
+      <img src="images/MH LOGO.png" alt="MH Creatives Logo" class="h-12 object-contain">
+    </div>
+    <nav class="ml-auto space-x-3 sm:space-x-6 text-sm sm:text-base flex">
+      <a href="index.html" class="hover:text-yellow-400 whitespace-nowrap">Home</a>
+      <a href="work.html" class="hover:text-yellow-400 whitespace-nowrap">Work</a>
+      <a href="about.html" class="hover:text-yellow-400 whitespace-nowrap">About</a>
+      <a href="contact.html" class="text-yellow-400 whitespace-nowrap">Contact</a>
     </nav>
   </header>
 
@@ -27,32 +29,34 @@
     <div class="absolute inset-0 bg-[url('images/bg-texture.png')] opacity-10 bg-cover bg-center z-0"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 text-center mb-6">Get in Touch</h2>
-      <p class="text-center text-gray-300 text-lg mb-12">"Raw to remarkable — your next edit starts here"</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-400 text-center mb-6">Get in Touch</h2>
+      <p class="text-center text-gray-300 text-sm sm:text-base md:text-lg mb-12 whitespace-nowrap overflow-auto">
+        "Raw to remarkable — your next edit starts here"
+      </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
         <!-- Contact Info -->
-        <div class="space-y-6">
+        <div class="space-y-6 text-sm sm:text-base">
           <div class="flex items-center gap-4">
-            <i class="fas fa-envelope text-yellow-400 text-2xl"></i>
-            <a href="mailto:mhcreatives765@gmail.com" class="hover:underline">mhcreatives765@gmail.com</a>
+            <i class="fas fa-envelope text-yellow-400 text-xl sm:text-2xl"></i>
+            <a href="mailto:mhcreatives765@gmail.com" class="hover:underline break-all">mhcreatives765@gmail.com</a>
           </div>
           <div class="flex items-center gap-4">
-            <i class="fab fa-whatsapp text-green-400 text-2xl"></i>
+            <i class="fab fa-whatsapp text-green-400 text-xl sm:text-2xl"></i>
             <a href="https://wa.me/919603223765" target="_blank" class="hover:underline">+91 9603223765</a>
           </div>
           <div class="flex items-center gap-4">
-            <i class="fab fa-instagram text-pink-400 text-2xl"></i>
+            <i class="fab fa-instagram text-pink-400 text-xl sm:text-2xl"></i>
             <a href="https://www.instagram.com/mh__creatives" target="_blank" class="hover:underline">@mh__creatives</a>
           </div>
           <div class="flex items-center gap-4">
-            <i class="fab fa-youtube text-red-500 text-2xl"></i>
+            <i class="fab fa-youtube text-red-500 text-xl sm:text-2xl"></i>
             <a href="https://www.youtube.com/@mhcreatives1108" target="_blank" class="hover:underline">@mhcreatives1108</a>
           </div>
         </div>
 
         <!-- Contact Form -->
-        <form id="contact-form" action="https://formspree.io/f/movwzebz" method="POST" class="bg-gray-900 bg-opacity-50 p-6 rounded-xl shadow-lg space-y-4">
+        <form id="contact-form" action="https://formspree.io/f/movwzebz" method="POST" class="bg-gray-900 bg-opacity-50 p-5 sm:p-6 rounded-xl shadow-lg space-y-4">
           <input type="text" name="name" id="name" placeholder="Your Name" class="w-full p-3 bg-black text-white border border-gray-700 rounded focus:outline-none focus:border-yellow-400" required>
           <input type="email" name="email" id="email" placeholder="Your Email" class="w-full p-3 bg-black text-white border border-gray-700 rounded focus:outline-none focus:border-yellow-400" required>
           <textarea name="message" id="message" rows="5" placeholder="Your Message" class="w-full p-3 bg-black text-white border border-gray-700 rounded focus:outline-none focus:border-yellow-400" required></textarea>
