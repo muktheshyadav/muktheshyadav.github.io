@@ -8,21 +8,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     @keyframes marquee {
-      0% { transform: translateX(0); }
+      0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
     .animate-marquee {
       animation: marquee 30s linear infinite;
     }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
-
-<body class="bg-black text-white font-sans overflow-x-hidden">
+<body class="bg-black text-white font-sans">
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-gray-800">
-    <img src="images/MH LOGO.png" alt="MH Creatives Logo" class="h-12 object-contain">
-    <nav class="space-x-4 sm:space-x-6 text-sm sm:text-base">
+  <header class="flex items-center justify-between px-6 py-4 border-b border-gray-800">
+    <img src="images/MH LOGO.png" alt="MH Creatives Logo" class="h-12">
+    <nav class="space-x-6">
       <a href="index.html" class="hover:text-yellow-400">Home</a>
       <a href="work.html" class="hover:text-yellow-400">Work</a>
       <a href="about.html" class="hover:text-yellow-400">About</a>
@@ -32,11 +38,11 @@
 
   <!-- Hero Section -->
   <section class="flex flex-col items-center justify-center min-h-[90vh] text-center px-4">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">MH Creatives</h1>
-    <p class="text-lg sm:text-xl mt-4 text-yellow-400 italic">Raw to Remarkable</p>
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">MH Creatives</h1>
+    <p class="text-xl mt-4 text-yellow-400 italic">Raw to Remarkable</p>
 
     <!-- Buttons -->
-    <div class="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6">
+    <div class="mt-8 flex gap-6 flex-wrap justify-center">
       <a href="work.html" class="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
         View Work
       </a>
@@ -45,26 +51,25 @@
       </a>
     </div>
 
-    <!-- Tagline -->
-    <div class="mt-20 sm:mt-32">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-widest text-center">
-        FASHION &nbsp;||&nbsp; PORTRAIT &nbsp;||&nbsp; EDITING
+    <!-- Final Fixed Text Section -->
+    <div class="mt-20 text-center w-full">
+      <h2 class="text-lg sm:text-xl md:text-3xl font-bold text-white tracking-wide whitespace-nowrap">
+        FASHION <span class="mx-2">||</span> PORTRAIT <span class="mx-2">||</span> EDITING
       </h2>
     </div>
   </section>
 
   <!-- Marquee Section -->
   <section class="relative overflow-hidden py-12 border-t border-b border-gray-800 bg-gradient-to-r from-black via-gray-900 to-black">
-    <div class="animate-marquee flex items-center gap-8 min-w-max px-4 w-max">
-      <!-- Images -->
-      <img src="images/IMG_1983.jpg" class="w-72 sm:w-80 h-48 sm:h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
-      <img src="images/0J0A2040-01.jpeg" class="w-72 sm:w-80 h-48 sm:h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
-      <img src="images/IMG_7705.jpg" class="w-72 sm:w-80 h-48 sm:h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
-      <img src="images/DSC05106.jpg" class="w-72 sm:w-80 h-48 sm:h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
-      <img src="images/BLR06901.jpg" class="w-72 sm:w-80 h-48 sm:h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
-      <img src="images/IMG_2637.jpg" class="w-72 sm:w-80 h-48 sm:h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
-      <img src="images/DSC08749.jpg" class="w-72 sm:w-80 h-48 sm:h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
-      <img src="images/IMG_20240725_200928.jpg" class="w-72 sm:w-80 h-48 sm:h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
+    <div class="animate-marquee flex items-center gap-8 min-w-max px-4">
+      <img src="images/IMG_1983.jpg" class="w-80 h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
+      <img src="images/0J0A2040-01.jpeg" class="w-80 h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
+      <img src="images/IMG_7705.jpg" class="w-80 h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
+      <img src="images/DSC05106.jpg" class="w-80 h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
+      <img src="images/BLR06901.jpg" class="w-80 h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
+      <img src="images/IMG_2637.jpg" class="w-80 h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
+      <img src="images/DSC08749.jpg" class="w-80 h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
+      <img src="images/IMG_20240725_200928.jpg" class="w-80 h-52 object-cover shadow-lg hover:scale-105 transition duration-300" alt="">
     </div>
   </section>
 
@@ -83,10 +88,10 @@
           <i class="fab fa-youtube fa-2xl"></i>
         </a>
       </div>
-
-      <!-- Copy Rights -->
-      <p class="text-sm text-gray-500 text-center">© 2025 MH Creatives. All rights reserved.</p>
+      <p class="text-base text-gray-500">© 2025 MH Creatives. All rights reserved.</p>
     </div>
   </footer>
+
 </body>
 </html>
+v
